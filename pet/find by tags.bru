@@ -1,26 +1,26 @@
 meta {
   name: findByTags
   type: http
+  seq: 1
 }
 
 get {
-  url: {{base_url}}/pet/findByTags
+  url: {{base_url}}/pet/findByTags?tags=small
   body: none
   auth: none
 }
 
 query {
-    tag: small
+  tags: small
 }
 
 docs {
     ### Description
     This API will fetch user detail by tags.
-```
+  ```
      query: {
-    "tag" : <string>
+    "tags" : <string>
   }
-```
-
-}
+  ```
   
+}

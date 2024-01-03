@@ -6,35 +6,82 @@ meta {
 
 post {
   url: {{base_url}}/pet
-  body: formUrlEncoded
+  body: json
   auth: none
 }
 
 body:json {
   {
-    "name" : "Postman pet store",
-    "id" : "PS2",
-    "status" : "available",
-    "tags" : [
-        {
-            "id" : "1",
-            "name" : "Dog"
-        },
-        {
-            "id" : "2",
-            "name" : "small"
-        }
-    ]
-  } 
-}
-
-body:form-urlencoded {
-  name: Bruno%20pet%20store
-  id: PS1
-  status: available
+    "name": "Postman pet store",
+    "id": "PS2",
+    "status": "available",
+    "tags": [
+      {
+        "id": "1",
+        "name": "Dog"
+      },
+      {
+        "id": "2",
+        "name": "small"
+      }
+    ],
+    "photoUrls": [
+      "https://www.shutterstock.com/image-vector/illustration-pet-store-260nw-1603206736.jpg"
+    ],
+    "category": {
+      "id": 1,
+      "name": "dogs"
+    }
+  }
 }
 
 docs {
   ## Description
-  This api will fetch pet store data by their health status
+  This api will create a new pet store.
+  
+   ### Request payload
+  ```
+  {
+    "name" : <string>,
+    "id" : <long>,
+    "status" : <string>,
+    "tags" : [
+        {
+            "id" : <long>,
+            "name" : <string>
+        }
+    ],
+    "photoUrls": [
+            "<string>",
+        ],
+        "category": {
+            "id": "<string>",
+            "name": "<string>"
+        },
+  } 
+  ```
+  
+  ### Response 
+  
+  ```
+    {
+        "name": "<string>",
+        "photoUrls": [
+            "<string>",
+            "<string>"
+        ],
+        "id": "<long>",
+        "category": {
+            "id": "<string>",
+            "name": "<string>"
+        },
+        "tags": [
+            {
+            "id": "<long>",
+            "name": "<string>"
+            }
+        ],
+        "status": "available"
+    }
+  ```
 }
