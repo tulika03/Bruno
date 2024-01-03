@@ -1,0 +1,10 @@
+meta {
+  name: get_patient_data_by_status
+  type: http
+}
+
+get {
+  url: {{api_endpoint}}/pet/findByStatus?status=available
+  body: none
+  auth: none
+}
