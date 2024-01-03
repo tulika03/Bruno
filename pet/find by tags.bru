@@ -1,0 +1,26 @@
+meta {
+  name: findByTags
+  type: http
+}
+
+get {
+  url: {{base_url}}/pet/findByTags
+  body: none
+  auth: none
+}
+
+query {
+    tag: small
+}
+
+docs {
+    ### Description
+    This API will fetch user detail by tags.
+```
+     query: {
+    "tag" : <string>
+  }
+```
+
+}
+  

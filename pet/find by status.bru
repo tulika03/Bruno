@@ -1,10 +1,19 @@
 meta {
-  name: get_patient_data_by_status
+  name: findByStatus
   type: http
 }
 
+headers {
+  Content-Type: application/json
+}
+
 get {
-  url: {{api_endpoint}}/pet/findByStatus?status=available
+  url: {{base_url}}/pet/findByStatus?status=available
   body: none
   auth: none
+}
+
+docs {
+  ## Description
+  This api will fetch pet store data by their status
 }

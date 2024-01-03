@@ -1,0 +1,40 @@
+meta {
+  name: createPetStore
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{base_url}}/pet
+  body: formUrlEncoded
+  auth: none
+}
+
+body:json {
+  {
+    "name" : "Postman pet store",
+    "id" : "PS2",
+    "status" : "available",
+    "tags" : [
+        {
+            "id" : "1",
+            "name" : "Dog"
+        },
+        {
+            "id" : "2",
+            "name" : "small"
+        }
+    ]
+  } 
+}
+
+body:form-urlencoded {
+  name: Bruno%20pet%20store
+  id: PS1
+  status: available
+}
+
+docs {
+  ## Description
+  This api will fetch pet store data by their health status
+}
